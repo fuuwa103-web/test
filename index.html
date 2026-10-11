@@ -4,11 +4,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>宮崎おさんぽ</title>
+<title>宮崎おさんぽ日和</title>
 
 <style>
 * { box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
 
 body {
@@ -36,19 +35,10 @@ header {
   font-weight: bold;
 }
 
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-}
+nav { display: flex; flex-wrap: wrap; gap: 16px; }
+nav a { color: #526c53; text-decoration: none; font-size: 13px; }
 
-nav a {
-  color: #526c53;
-  text-decoration: none;
-  font-size: 13px;
-}
-
-/* ===== メイン写真スライドショー ===== */
+/* メイン写真スライドショー */
 .hero {
   min-height: 440px;
   padding: 65px 60px;
@@ -71,7 +61,6 @@ nav a {
   opacity: 0;
   transition: opacity 1.2s ease-in-out;
 }
-
 .hero-background.active { opacity: 1; }
 
 .hero::after {
@@ -89,14 +78,12 @@ nav a {
 }
 
 .hero small { letter-spacing: 4px; }
-
 .hero h1 {
   font-family: Georgia, "Yu Mincho", serif;
   font-size: clamp(34px, 6vw, 55px);
   line-height: 1.5;
   margin: 15px 0;
 }
-
 .hero p { font-size: 15px; }
 
 .btn {
@@ -132,9 +119,7 @@ nav a {
   font-size: 25px;
   line-height: 1;
   cursor: pointer;
-  transition: background .2s;
 }
-
 .hero-arrow:hover { background: #ffffff66; }
 .hero-prev { left: 20px; }
 .hero-next { right: 20px; }
@@ -159,45 +144,21 @@ nav a {
   background: #ffffff66;
   cursor: pointer;
 }
+.hero-dot.active { background: white; transform: scale(1.2); }
 
-.hero-dot.active {
-  background: white;
-  transform: scale(1.2);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-background { transition: none; }
-}
-
-/* ===== 共通セクション ===== */
+/* 共通セクション */
 section {
   max-width: 1200px;
   margin: auto;
   padding: 60px 6%;
 }
 
-.heading {
-  text-align: center;
-  margin-bottom: 30px;
-}
+.heading { text-align: center; margin-bottom: 30px; }
+.heading small { color: #99966f; letter-spacing: 3px; }
+.heading h2 { font-size: 28px; margin: 5px 0; }
+.intro { max-width: 720px; margin: auto; text-align: center; }
 
-.heading small {
-  color: #99966f;
-  letter-spacing: 3px;
-}
-
-.heading h2 {
-  font-size: 28px;
-  margin: 5px 0;
-}
-
-.intro {
-  max-width: 720px;
-  margin: auto;
-  text-align: center;
-}
-
-/* ===== 検索・絞り込み ===== */
+/* 検索・絞り込み */
 .controls {
   background: #fffdf8;
   border: 1px solid #eeece2;
@@ -207,11 +168,7 @@ section {
   text-align: center;
 }
 
-.controls h3 {
-  margin: 0 0 12px;
-  font-size: 17px;
-}
-
+.controls h3 { margin: 0 0 12px; font-size: 17px; }
 .control-group { margin-bottom: 22px; }
 .control-group:last-child { margin-bottom: 0; }
 
@@ -233,9 +190,7 @@ section {
   font-size: 13px;
   transition: .2s;
 }
-
 .filter-btn:hover { background: #edf1e6; }
-
 .filter-btn.active {
   background: #526c53;
   color: white;
@@ -260,13 +215,9 @@ section {
   outline-color: #789274;
 }
 
-.result-count {
-  color: #777f73;
-  font-size: 13px;
-  margin-top: 15px;
-}
+.result-count { color: #777f73; font-size: 13px; margin-top: 15px; }
 
-/* ===== スポットカード ===== */
+/* スポットカード */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
@@ -280,7 +231,6 @@ section {
   box-shadow: 0 5px 20px #344b400d;
   transition: transform .2s;
 }
-
 .card:hover { transform: translateY(-4px); }
 .card[hidden] { display: none; }
 
@@ -294,45 +244,23 @@ section {
 
 .card-content { padding: 20px; }
 
-.tag {
+.tag, .area-tag {
   display: inline-block;
-  color: #627754;
-  background: #edf1e6;
   border-radius: 20px;
   padding: 3px 11px;
   font-size: 11px;
 }
-
+.tag { color: #627754; background: #edf1e6; }
 .area-tag {
-  display: inline-block;
   margin-left: 5px;
   color: #8b7654;
   background: #f5eee1;
-  border-radius: 20px;
-  padding: 3px 10px;
-  font-size: 11px;
 }
 
-.card h3 {
-  font-size: 21px;
-  margin: 10px 0 2px;
-}
-
-.rating {
-  color: #aa8240;
-  font-size: 13px;
-}
-
-.rating-label {
-  color: #6c746c;
-  margin-left: 4px;
-}
-
-.card p {
-  color: #687369;
-  font-size: 14px;
-  min-height: 76px;
-}
+.card h3 { font-size: 21px; margin: 10px 0 2px; }
+.rating { color: #aa8240; font-size: 13px; }
+.rating-label { color: #6c746c; margin-left: 4px; }
+.card p { color: #687369; font-size: 14px; min-height: 76px; }
 
 .features {
   display: flex;
@@ -340,7 +268,6 @@ section {
   gap: 6px;
   margin: 12px 0 18px;
 }
-
 .features span {
   font-size: 11px;
   background: #f5f2e9;
@@ -363,19 +290,12 @@ section {
   color: #777f73;
 }
 
-/* ===== おさんぽのコツ ===== */
-.tips {
-  max-width: none;
-  background: #edf1e6;
-}
-
-.tips-inner {
-  max-width: 850px;
-  margin: auto;
-}
-
+/* おさんぽのコツ */
+.tips { max-width: none; background: #edf1e6; }
+.tips-inner { max-width: 850px; margin: auto; }
 .tips li { padding: 5px 0; }
 
+/* フッター */
 footer {
   background: #526c53;
   color: white;
@@ -383,33 +303,80 @@ footer {
   padding: 25px;
   font-size: 13px;
 }
-
 footer p { margin: 5px; }
 
+/* ご意見掲示板 */
+.feedback-board {
+  max-width: 760px;
+  margin: 28px auto 20px;
+  padding: 22px;
+  border: 1px solid #ffffff55;
+  border-radius: 14px;
+  background: #ffffff12;
+  text-align: left;
+}
+.feedback-board h3 { margin: 0 0 5px; font-size: 19px; }
+.feedback-board .board-note {
+  margin: 0 0 18px;
+  font-size: 12px;
+  opacity: .85;
+}
+.feedback-form { display: grid; gap: 10px; }
+
+.feedback-form input,
+.feedback-form textarea {
+  width: 100%;
+  padding: 11px 13px;
+  border: 1px solid #d6ddcf;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 14px;
+  color: #39483c;
+  background: #fffdf8;
+}
+
+.feedback-form textarea { min-height: 90px; resize: vertical; }
+.feedback-form .btn {
+  justify-self: start;
+  background: #fffdf8;
+  color: #526c53;
+}
+
+.feedback-list { display: grid; gap: 10px; margin-top: 20px; }
+
+.feedback-item {
+  padding: 13px 15px;
+  border-radius: 9px;
+  background: #ffffff18;
+  border: 1px solid #ffffff30;
+  overflow-wrap: anywhere;
+}
+
+.feedback-item strong { display: block; margin-bottom: 4px; font-size: 13px; }
+.feedback-item p { margin: 0; white-space: pre-wrap; font-size: 14px; }
+
+.feedback-empty {
+  margin: 0;
+  padding: 15px;
+  text-align: center;
+  font-size: 13px;
+  opacity: .8;
+  border: 1px dashed #ffffff66;
+  border-radius: 8px;
+}
+
 @media (max-width: 600px) {
-  header {
-    justify-content: center;
-    text-align: center;
-  }
-
-  nav {
-    justify-content: center;
-    gap: 13px;
-  }
-
-  .hero {
-    min-height: 360px;
-    padding: 55px 45px;
-  }
-
+  header { justify-content: center; text-align: center; }
+  nav { justify-content: center; gap: 13px; }
+  .hero { min-height: 360px; padding: 55px 45px; }
   .hero-prev { left: 8px; }
   .hero-next { right: 8px; }
-
   section { padding: 45px 5%; }
   .controls { padding: 22px 10px; }
   .filter-btn { padding: 8px 12px; }
   .cards { grid-template-columns: 1fr; }
   .card p { min-height: auto; }
+  .feedback-board { padding: 16px; }
 }
 </style>
 </head>
@@ -430,11 +397,8 @@ footer p { margin: 5px; }
   <div class="hero-background active" id="heroBgA" aria-hidden="true"></div>
   <div class="hero-background" id="heroBgB" aria-hidden="true"></div>
 
-  <button class="hero-arrow hero-prev" id="heroPrev"
-    type="button" aria-label="前の写真">‹</button>
-
-  <button class="hero-arrow hero-next" id="heroNext"
-    type="button" aria-label="次の写真">›</button>
+  <button class="hero-arrow hero-prev" id="heroPrev" type="button" aria-label="前の写真">‹</button>
+  <button class="hero-arrow hero-next" id="heroNext" type="button" aria-label="次の写真">›</button>
 
   <div>
     <small>MIYAZAKI WALKING GUIDE</small>
@@ -453,8 +417,7 @@ footer p { margin: 5px; }
   </div>
   <p class="intro">
     青い海、心地よい風、緑いっぱいの公園。
-    宮崎には、歩くだけで気分がリフレッシュする
-    場所がたくさんあります。
+    宮崎には、歩くだけで気分がリフレッシュする場所がたくさんあります。
     県央から県北、県西、県南まで。
     あなたのお気に入りのおさんぽスポットを探してみませんか？
   </p>
@@ -494,13 +457,11 @@ footer p { margin: 5px; }
       <button type="button" class="btn" id="searchBtn">スポットを検索</button>
       <button type="button" class="filter-btn" id="resetBtn">リセット</button>
     </div>
-
     <div class="result-count" id="count" aria-live="polite">9スポット掲載中</div>
   </div>
 
   <div class="cards" id="cards">
 
-    <!-- 県央エリア -->
     <article class="card" data-region="央" data-category="sea" data-keywords="青島 海 絶景 神社 鬼の洗濯板 ビーチ 南国">
       <img src="https://www.miyazaki-city.tourism.or.jp/storage/tourism_attractions/10002/responsive_images/Z5fGLguhAF0AuVY6nposPHP6Ysg79SOFqv6HxF4J__1500_1000.jpeg" alt="青島神社の社殿" loading="lazy">
       <div class="card-content">
@@ -549,7 +510,6 @@ footer p { margin: 5px; }
       </div>
     </article>
 
-    <!-- 県北エリア -->
     <article class="card" data-region="北" data-category="green" data-keywords="高千穂峡 高千穂 滝 渓谷 真名井の滝 自然 絶景">
       <img src="https://www.kanko-miyazaki.jp/business/photo/image/709" alt="高千穂峡の滝と渓谷" loading="lazy">
       <div class="card-content">
@@ -574,7 +534,6 @@ footer p { margin: 5px; }
       </div>
     </article>
 
-    <!-- 県西エリア -->
     <article class="card" data-region="西" data-category="green" data-keywords="えびの高原 えびの 池 高原 山 自然 トレッキング">
       <img src="https://www.miyazaki-city.tourism.or.jp/storage/tourism_attractions/10061/responsive_images/Xp8mxpZSqVQJWBttq3pTyjD3ShLJCWkiBhOHssIr__1626_1072.jpeg" alt="えびの高原の山と花" loading="lazy">
       <div class="card-content">
@@ -587,7 +546,6 @@ footer p { margin: 5px; }
       </div>
     </article>
 
-    <!-- 県南エリア -->
     <article class="card" data-region="南" data-category="sea" data-keywords="サンメッセ日南 日南 海 モアイ 絶景 写真">
       <img src="https://www.miyazaki-city.tourism.or.jp/storage/tourism_attractions/10057/responsive_images/bl7fHCFt8GbeYJLMN9lo4H4ju5QUBh2m8f7nTX2L__1649_1237.jpeg" alt="サンメッセ日南のモアイ像" loading="lazy">
       <div class="card-content">
@@ -639,6 +597,40 @@ footer p { margin: 5px; }
 <footer>
   <p>☕ 宮崎おさんぽ日和</p>
   <p>自然を感じる、ちょっと特別な日常。</p>
+
+  <!-- ご意見掲示板 -->
+  <div class="feedback-board" id="feedbackBoard">
+    <h3>💬 ご意見掲示板</h3>
+    <p class="board-note">サイトへの感想やおすすめスポットを気軽に書いてね。</p>
+
+    <form class="feedback-form" id="feedbackForm">
+      <input
+        id="feedbackNickname"
+        type="text"
+        maxlength="30"
+        placeholder="ニックネーム"
+        aria-label="ニックネーム"
+        required
+      >
+
+      <textarea
+        id="feedbackMessage"
+        maxlength="500"
+        placeholder="ご意見を入力してください"
+        aria-label="ご意見"
+        required
+      ></textarea>
+
+      <button class="btn" type="submit">投稿する</button>
+    </form>
+
+    <div class="feedback-list" id="feedbackList" aria-live="polite">
+      <p class="feedback-empty" id="feedbackEmpty">
+        まだ投稿はありません。最初のご意見をどうぞ！
+      </p>
+    </div>
+  </div>
+
   <p style="font-size:11px; opacity:.85;">写真：宮崎市観光サイト・宮崎県公式観光サイト掲載写真</p>
   <p>&copy; 2026 Miyazaki Osanpo Guide</p>
 </footer>
@@ -693,9 +685,7 @@ let heroIndex = 0;
 let heroShowingA = true;
 let heroTimer = null;
 
-const heroBackgrounds = [heroBgA, heroBgB];
-
-/* 丸いページ切り替えボタンを作成 */
+/* 写真選択用の丸いボタンを作成 */
 heroPhotos.forEach((photo, index) => {
   const dot = document.createElement("button");
   dot.type = "button";
@@ -710,7 +700,6 @@ heroPhotos.forEach((photo, index) => {
   heroDots.appendChild(dot);
 });
 
-/* 写真を切り替える */
 function showHeroPhoto(index) {
   heroIndex = (index + heroPhotos.length) % heroPhotos.length;
 
@@ -730,7 +719,7 @@ function showHeroPhoto(index) {
   });
 }
 
-/* 自動切り替え：5秒ごと */
+/* 5秒ごとに写真を切り替える */
 function restartHeroTimer() {
   clearInterval(heroTimer);
   heroTimer = setInterval(() => {
@@ -738,7 +727,7 @@ function restartHeroTimer() {
   }, 5000);
 }
 
-/* 最初の写真を設定 */
+/* 最初の写真 */
 heroBgA.style.backgroundImage = `url("${heroPhotos[0].url}")`;
 document.querySelectorAll(".hero-dot")[0].classList.add("active");
 
@@ -753,7 +742,7 @@ document.getElementById("heroNext").addEventListener("click", () => {
   restartHeroTimer();
 });
 
-/* 写真の上にマウスがある間は自動切り替えを止める */
+/* マウスやキーボード操作中は自動切り替えを一時停止 */
 heroSlideshow.addEventListener("mouseenter", () => clearInterval(heroTimer));
 heroSlideshow.addEventListener("mouseleave", restartHeroTimer);
 heroSlideshow.addEventListener("focusin", () => clearInterval(heroTimer));
@@ -832,7 +821,7 @@ categoryButtons.forEach(button => {
   });
 });
 
-/* 検索ボタンと入力 */
+/* 検索 */
 document.getElementById("searchBtn").addEventListener("click", filterCards);
 searchInput.addEventListener("input", filterCards);
 
@@ -858,6 +847,37 @@ document.getElementById("resetBtn").addEventListener("click", () => {
 });
 
 filterCards();
+
+/* ===== ご意見掲示板（モック版） ===== */
+const feedbackForm = document.getElementById("feedbackForm");
+const feedbackNickname = document.getElementById("feedbackNickname");
+const feedbackMessage = document.getElementById("feedbackMessage");
+const feedbackList = document.getElementById("feedbackList");
+const feedbackEmpty = document.getElementById("feedbackEmpty");
+
+feedbackForm.addEventListener("submit", event => {
+  event.preventDefault();
+
+  const nickname = feedbackNickname.value.trim();
+  const message = feedbackMessage.value.trim();
+
+  if (!nickname || !message) return;
+
+  const item = document.createElement("article");
+  item.className = "feedback-item";
+
+  const name = document.createElement("strong");
+  name.textContent = nickname;
+
+  const content = document.createElement("p");
+  content.textContent = message;
+
+  item.append(name, content);
+  feedbackList.prepend(item);
+
+  feedbackEmpty.hidden = true;
+  feedbackForm.reset();
+});
 </script>
 
 </body>
