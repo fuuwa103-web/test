@@ -1,0 +1,334 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>宮崎おさんぽ日和</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Yu Gothic", sans-serif;
+  color: #39483d;
+  background: #faf8f1;
+  line-height: 1.8;
+}
+
+header {
+  padding: 20px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fffdf8;
+}
+
+.logo {
+  font-size: 21px;
+  font-weight: bold;
+  color: #526c53;
+}
+
+nav a {
+  margin-left: 18px;
+  color: #526c53;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.hero {
+  min-height: 440px;
+  padding: 70px 20px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: white;
+  background:
+    linear-gradient(#203c3060, #203c3060),
+    url("https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1600&q=80")
+    center / cover;
+}
+
+.hero h1 {
+  font-size: clamp(34px, 6vw, 55px);
+  line-height: 1.5;
+  margin: 10px 0;
+}
+
+.hero p {
+  font-size: 16px;
+}
+
+.hero a {
+  display: inline-block;
+  padding: 10px 28px;
+  margin-top: 15px;
+  border-radius: 30px;
+  color: #526c53;
+  background: white;
+  text-decoration: none;
+}
+
+section {
+  max-width: 1150px;
+  margin: auto;
+  padding: 65px 6%;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.heading small {
+  color: #9b9b73;
+  letter-spacing: 3px;
+}
+
+.heading h2 {
+  font-size: 29px;
+  margin: 5px 0;
+}
+
+.intro {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit, minmax(230px, 1fr)
+  );
+  gap: 25px;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px #344b4010;
+}
+
+.card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.tag {
+  color: #667b59;
+  background: #edf1e6;
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 12px;
+}
+
+.card h3 {
+  font-size: 22px;
+  margin: 12px 0 5px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #6c746c;
+}
+
+.map {
+  display: inline-block;
+  color: #657a57;
+  text-decoration: none;
+  border-bottom: 1px solid #657a57;
+  font-size: 14px;
+}
+
+.tips {
+  max-width: none;
+  background: #edf1e6;
+}
+
+.tips-inner {
+  max-width: 850px;
+  margin: auto;
+}
+
+.tips li {
+  padding: 5px 0;
+}
+
+footer {
+  padding: 28px;
+  text-align: center;
+  background: #526c53;
+  color: white;
+  font-size: 13px;
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  nav a {
+    margin: 0 7px;
+  }
+
+  .hero {
+    min-height: 350px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">☕ 宮崎おさんぽ日和</div>
+  <nav>
+    <a href="#about">このサイトについて</a>
+    <a href="#spots">スポット</a>
+    <a href="#tips">おさんぽのコツ</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div>
+    <p>MIYAZAKI WALKING GUIDE</p>
+    <h1>いつもの毎日に、<br>小さなおさんぽを。</h1>
+    <p>海と緑に出会う、宮崎の休日。</p>
+    <a href="#spots">お気に入りを見つける ↓</a>
+  </div>
+</div>
+
+<section id="about">
+  <div class="heading">
+    <small>ABOUT</small>
+    <h2>宮崎を、ゆっくり歩こう。</h2>
+  </div>
+  <p class="intro">
+    青い海、心地よい風、緑いっぱいの公園。
+    宮崎には、歩くだけで気分がリフレッシュする
+    場所がたくさんあります。
+    ひとりでのんびりしたい日も、友達と出かけたい日も。
+    お気に入りのおさんぽスポットを探してみませんか？
+  </p>
+</section>
+
+<section id="spots">
+  <div class="heading">
+    <small>OUR FAVORITE PLACES</small>
+    <h2>おすすめおさんぽスポット</h2>
+    <p>今日の気分にぴったりの場所へ。</p>
+  </div>
+
+  <div class="cards">
+
+    <article class="card">
+      <img
+        src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=800&q=80"
+        alt="海と波の風景">
+      <div class="card-content">
+        <span class="tag">SEA & NATURE</span>
+        <h3>青島</h3>
+        <p>
+          南国らしい海と自然が魅力。
+          鬼の洗濯板や青島神社を巡りながら、
+          海辺の景色を楽しもう。
+        </p>
+        <a class="map"
+          href="https://www.google.com/maps/search/?api=1&query=青島+宮崎市"
+          target="_blank" rel="noopener">地図を見る ↗</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <img
+        src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80"
+        alt="木々に囲まれた森">
+      <div class="card-content">
+        <span class="tag">GREEN & RELAX</span>
+        <h3>平和台公園</h3>
+        <p>
+          豊かな緑に包まれた公園。
+          平和の塔やはにわ園を眺めながら、
+          自分のペースでゆっくり散策。
+        </p>
+        <a class="map"
+          href="https://www.google.com/maps/search/?api=1&query=平和台公園+宮崎市"
+          target="_blank" rel="noopener">地図を見る ↗</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <img
+        src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=800&q=80"
+        alt="水辺の自然風景">
+      <div class="card-content">
+        <span class="tag">SEA & BREEZE</span>
+        <h3>みやざき臨海公園</h3>
+        <p>
+          海風を感じながらリフレッシュ。
+          広い空と海を眺めて、
+          日常を少しだけ忘れる時間を。
+        </p>
+        <a class="map"
+          href="https://www.google.com/maps/search/?api=1&query=みやざき臨海公園"
+          target="_blank" rel="noopener">地図を見る ↗</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <img
+        src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=800&q=80"
+        alt="自然に囲まれた水辺">
+      <div class="card-content">
+        <span class="tag">RIVERSIDE</span>
+        <h3>橘公園</h3>
+        <p>
+          大淀川沿いの景色を楽しめる公園。
+          街なかで気軽に自然を感じたい日に
+          ぴったりのお散歩スポット。
+        </p>
+        <a class="map"
+          href="https://www.google.com/maps/search/?api=1&query=橘公園+宮崎市"
+          target="_blank" rel="noopener">地図を見る ↗</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="tips" id="tips">
+  <div class="tips-inner">
+    <div class="heading">
+      <small>WALKING TIPS</small>
+      <h2>おさんぽを楽しむコツ</h2>
+    </div>
+    <ul>
+      <li>☀️ 暑い日は朝や夕方の涼しい時間に。</li>
+      <li>👟 歩きやすい靴と飲み物を忘れずに。</li>
+      <li>📷 お気に入りの景色を写真に残そう。</li>
+      <li>🌿 自分のペースで、無理なく楽しもう。</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <p>☕ 宮崎おさんぽ日和</p>
+  <p>自然を感じる、ちょっと特別な日常。</p>
+  <p>&copy; 2026 Miyazaki Osanpo Guide</p>
+</footer>
+
+</body>
+</html>
